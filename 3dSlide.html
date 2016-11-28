@@ -1,0 +1,60 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta charset="UTF-8">
+		<title></title>
+		<link rel="stylesheet" href="slide3D.css" />
+		<style>
+			html,body{
+				width: 100%;
+				height: 100%;
+			}
+			.slide3D img{
+				width: 100%;
+			}
+			.container3D{
+				background: #eee;
+				margin-bottom: 10px;
+			}
+		</style>
+	</head>
+	<body>
+		<div class="container3D">
+			<div class="wrapper3D">
+				<div class="slide3D">
+					<img src="image-slider-1.jpg" alt="" />
+				</div>
+				<div class="slide3D">
+					<img src="image-slider-2.jpg" alt="" />
+				</div>
+				<div class="slide3D">
+					<img src="image-slider-3.jpg" alt="" />
+				</div>
+				<div class="slide3D">
+					<img src="image-slider-4.jpg" alt="" />
+				</div>
+				<div class="slide3D">
+					<img src="image-slider-5.jpg" alt="" />
+				</div>
+			</div>
+			<div class="slide3D-pagination"></div>
+			<div class="slide3D-prev-button"></div>
+			<div class="slide3D-next-button"></div>
+		</div>
+		<script src="effect.js"></script>
+		<script src="slide3D.js"></script>
+		<script>
+			var mySlide = Slide3D('.container3D', {
+				width: 700,
+				height:306,
+				effect: 'fragment',  // flip | turn | slide | flat | fragment
+				sources: ['image-slider-1.jpg','image-slider-2.jpg','image-slider-3.jpg','image-slider-4.jpg','image-slider-5.jpg'],
+				box:{
+					cols: 3
+				},
+				pagination: true,
+				loop:true
+			});
+		</script>
+	</body>
+</html>
