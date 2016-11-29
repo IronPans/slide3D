@@ -41,6 +41,7 @@ slide3D是一个轮番插件，具备触摸滑动，且具有多种切换特效
 var mySlide = Slide3D('.container3D', {
 				width: 700,   //  宽度
 				height:306,   // 高度
+				direction: 'horizontal | vertical',  // 定义切换方向，只对slide有效				
 				effect: 'fragment',  // flip | turn | slide | flat | fragment   // 切换效果
 				sources: ['image-slider-1.jpg','image-slider-2.jpg','image-slider-3.jpg','image-slider-4.jpg','image-slider-5.jpg'],  // 除了effect设为slide外，在其他切换效果的情况下，都需要通过sources给每个slide指定图片。
 				box:{
