@@ -4,7 +4,7 @@
 		<meta charset="UTF-8">
 		<title></title>
 		<link rel="stylesheet" href="slide3D.css" />
-		<style>
+		<style id="stylesheet">
 			html,body{
 				width: 100%;
 				height: 100%;
@@ -14,45 +14,194 @@
 			}
 			.container3D{
 				background: #eee;
-				margin-bottom: 10px;
+				margin:10px;
+				float:left;
 			}
 		</style>
 	</head>
 	<body>
-		<div class="container3D">
-			<div class="wrapper3D">
-				<div class="slide3D">
-					<img src="image-slider-1.jpg" alt="" />
+		<div id="content">
+			<div class="container3D slide">
+				<div class="wrapper3D">
+					<div class="slide3D">
+						<img src="image-slider-1.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-2.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-3.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-4.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-5.jpg" alt="" />
+					</div>
 				</div>
-				<div class="slide3D">
-					<img src="image-slider-2.jpg" alt="" />
-				</div>
-				<div class="slide3D">
-					<img src="image-slider-3.jpg" alt="" />
-				</div>
-				<div class="slide3D">
-					<img src="image-slider-4.jpg" alt="" />
-				</div>
-				<div class="slide3D">
-					<img src="image-slider-5.jpg" alt="" />
-				</div>
+				<div class="slide3D-pagination"></div>
+				<div class="slide3D-prev-button"></div>
+				<div class="slide3D-next-button"></div>
 			</div>
-			<div class="slide3D-pagination"></div>
-			<div class="slide3D-prev-button"></div>
-			<div class="slide3D-next-button"></div>
+			<div class="container3D flip">
+				<div class="wrapper3D">
+					<div class="slide3D">
+						<img src="image-slider-1.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-2.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-3.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-4.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-5.jpg" alt="" />
+					</div>
+				</div>
+				<div class="slide3D-pagination"></div>
+				<div class="slide3D-prev-button"></div>
+				<div class="slide3D-next-button"></div>
+			</div>
+			<div class="container3D turn">
+				<div class="wrapper3D">
+					<div class="slide3D">
+						<img src="image-slider-1.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-2.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-3.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-4.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-5.jpg" alt="" />
+					</div>
+				</div>
+				<div class="slide3D-pagination"></div>
+				<div class="slide3D-prev-button"></div>
+				<div class="slide3D-next-button"></div>
+			</div>
+			<div class="container3D flat">
+				<div class="wrapper3D">
+					<div class="slide3D">
+						<img src="image-slider-1.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-2.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-3.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-4.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-5.jpg" alt="" />
+					</div>
+				</div>
+				<div class="slide3D-pagination"></div>
+				<div class="slide3D-prev-button"></div>
+				<div class="slide3D-next-button"></div>
+			</div>
+			<div class="container3D fragment">
+				<div class="wrapper3D">
+					<div class="slide3D">
+						<img src="image-slider-1.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-2.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-3.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-4.jpg" alt="" />
+					</div>
+					<div class="slide3D">
+						<img src="image-slider-5.jpg" alt="" />
+					</div>
+				</div>
+				<div class="slide3D-pagination"></div>
+				<div class="slide3D-prev-button"></div>
+				<div class="slide3D-next-button"></div>
+			</div>
 		</div>
 		<script src="slide3D.js"></script>
-		<script>
-			var mySlide = Slide3D('.container3D', {
-				width: 700,
-				height:306,
-				effect: 'fragment',  // flip | turn | slide | flat | fragment
-				sources: ['image-slider-1.jpg','image-slider-2.jpg','image-slider-3.jpg','image-slider-4.jpg','image-slider-5.jpg'],
+		<script id="scripts">
+		    var width = 400;
+		    var height = 178;
+			var mySlide = new Slide3D('.slide', {
+				width: width,
+				height:height,
+				effect: 'slide',  
+				pagination: true,  // 是否添加分页器
+				loop:true  //是否循环，除“slide”外，其他动画默认循环
+			});
+			var mySlide2 = new Slide3D('.flip', {
+				width: width,
+				height:height,
+				effect: 'flip',  // flip | turn | slide | flat | fragment
+				sources: ['image-slider-1.jpg',
+				'image-slider-2.jpg',
+				'image-slider-3.jpg',
+				'image-slider-4.jpg',
+				'image-slider-5.jpg'],
 				box:{
-					cols: 3
+					rows: 6,  // 切割行
+					cols: 3  // 切割列
 				},
-				pagination: true,
-				loop:true
+				pagination: true,  // 是否添加分页器
+			});
+			var mySlide3 = new Slide3D('.turn', {
+				width: width,
+				height:height,
+				effect: 'turn',  // flip | turn | slide | flat | fragment
+				sources: ['image-slider-1.jpg',
+				'image-slider-2.jpg',
+				'image-slider-3.jpg',
+				'image-slider-4.jpg',
+				'image-slider-5.jpg'],
+				box:{
+					rows: 6,  // 切割行
+					cols: 3  // 切割列
+				},
+				pagination: true,  // 是否添加分页器
+			});
+			var mySlide4 = new Slide3D('.flat', {
+				width: width,
+				height:height,
+				effect: 'flat',  // flip | turn | slide | flat | fragment
+				sources: ['image-slider-1.jpg',
+				'image-slider-2.jpg',
+				'image-slider-3.jpg',
+				'image-slider-4.jpg',
+				'image-slider-5.jpg'],
+				box:{
+					rows: 6,  // 切割行
+					cols: 10  // 切割列
+				},
+				pagination: true,  // 是否添加分页器
+			});
+			var mySlide5 = new Slide3D('.fragment', {
+				width: width,
+				height:height,
+				effect: 'fragment',  // flip | turn | slide | flat | fragment
+				sources: ['image-slider-1.jpg',
+				'image-slider-2.jpg',
+				'image-slider-3.jpg',
+				'image-slider-4.jpg',
+				'image-slider-5.jpg'],
+				box:{
+					rows: 6,  // 切割行
+					cols: 3  // 切割列
+				},
+				pagination: true,  // 是否添加分页器
 			});
 		</script>
 	</body>
