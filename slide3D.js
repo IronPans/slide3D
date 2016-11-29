@@ -3,14 +3,14 @@
 		params = params || {};
 		//初始化参数
 		var options = {
-			speed: 500,
-			effect: 'slide',
-			direction: 'horizontal',
-			distance: 30,
-			pagination: false,
-			loop: false,
-			autoplay: false,
-			box: {
+			speed: 500,  // 滑动速度，即slider自动滑动开始到结束的时间（单位ms）
+			effect: 'slide',  //切换效果 flip | turn | slide | flat | fragment
+			direction: 'horizontal',  // 切换方向
+			distance: 30,  
+			pagination: false,  // 分页器
+			loop: false,  // 是否循环
+			autoplay: false,  // 自动播放
+			box: {   // 分格
 				rows: 6, // 行
 				cols: 3 //列
 			}
@@ -114,6 +114,7 @@
 				s.pagination.innerHTML = bullets.join('');
 			};
 		};
+		// 切换动画
 		s.executeAnimate = function() {
 			function end(){
 				if(s.params.pagination) {
@@ -357,7 +358,6 @@
 			slide: {
 				init: function() {
 					if(s.params.direction == 'horizontal') {
-						s.container.classList.add('container3D-horizontal');
 						if(s.params.loop) {
 							s.wrapper.style.width = s.params.width * (s.totalLength + 2) + 'px';
 						} else {
@@ -459,10 +459,15 @@
 						s.totalLength = s.params.sources.length;
 						var class3D = 'wrapper3D-' + s.params.effect;
 						s.wrapper.classList.add(class3D);
+						s.container.classList.add('container3D-horizontal');
 					} else {
 						s.effects[s.params.effect].init && s.effects[s.params.effect].init();
-					}
-					s.container.classList.add('container3D-horizontal');
+						if(s.params.direction == 'vertical'){
+							s.container.classList.add('container3D-vertical');
+						}else{
+							s.container.classList.add('container3D-horizontal');
+						}
+					};
 				},
 				touchstart: function() {
 
