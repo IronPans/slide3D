@@ -3,14 +3,14 @@
 		params = params || {};
 		//初始化参数
 		var options = {
-			speed: 500,  // 滑动速度，即slider自动滑动开始到结束的时间（单位ms）
-			effect: 'slide',  //切换效果 flip | turn | slide | flat | fragment
-			direction: 'horizontal',  // 切换方向
-			distance: 30,  
-			pagination: false,  // 分页器
-			loop: false,  // 是否循环
-			autoplay: false,  // 自动播放
-			box: {   // 分格
+			speed: 500, // 滑动速度，即slider自动滑动开始到结束的时间（单位ms）
+			effect: 'slide', //切换效果 flip | turn | slide | flat | fragment
+			direction: 'horizontal', // 切换方向
+			distance: 30,
+			pagination: false, // 分页器
+			loop: false, // 是否循环
+			autoplay: false, // 自动播放
+			box: { // 分格
 				rows: 6, // 行
 				cols: 3 //列
 			}
@@ -116,14 +116,14 @@
 		};
 		// 切换动画
 		s.executeAnimate = function() {
-			function end(){
+			function end() {
 				if(s.params.pagination) {
-						var bullets = s.pagination.querySelectorAll('.slide3D-pagination-bullet');
-						Array.prototype.forEach.call(bullets, function(bullet) {
-							bullet.classList.remove('slide3D-pagination-bullet-active');
-						});
-						bullets[s.activeIndex].classList.add('slide3D-pagination-bullet-active');
-					};
+					var bullets = s.pagination.querySelectorAll('.slide3D-pagination-bullet');
+					Array.prototype.forEach.call(bullets, function(bullet) {
+						bullet.classList.remove('slide3D-pagination-bullet-active');
+					});
+					bullets[s.activeIndex].classList.add('slide3D-pagination-bullet-active');
+				};
 			};
 			var animation = {
 				turn: {
@@ -208,7 +208,7 @@
 							}, function() {
 								s.wrapper.innerHTML = '';
 								s.lock = false;
-										end();
+								end();
 							}, i);
 						})(item);
 					},
@@ -462,9 +462,9 @@
 						s.container.classList.add('container3D-horizontal');
 					} else {
 						s.effects[s.params.effect].init && s.effects[s.params.effect].init();
-						if(s.params.direction == 'vertical'){
+						if(s.params.direction == 'vertical') {
 							s.container.classList.add('container3D-vertical');
-						}else{
+						} else {
 							s.container.classList.add('container3D-horizontal');
 						}
 					};
@@ -550,6 +550,8 @@
 			}
 		};
 		s.slideNext = function() {
+			if(s.lock) return;
+			s.lock = true;
 			if(s.params.effect == 'slide') {
 				s.setTransitionDuration(s.wrapper, s.params.speed);
 				s.effects.slide.move(-40);
@@ -562,6 +564,8 @@
 			}
 		};
 		s.slidePrev = function() {
+			if(s.lock) return;
+			s.lock = true;
 			if(s.params.effect == 'slide') {
 				s.setTransitionDuration(s.wrapper, s.params.speed);
 				s.effects.slide.move(40);
