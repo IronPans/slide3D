@@ -1,3 +1,12 @@
+/**
+ * slide3D 1.2.1
+ * 
+ * https://github.com/IronPans/slide3D
+ * 
+ * Copyright 2017, TG
+ * 
+ * Released on: January 5, 2017
+ */
 (function(window) {
 	var Slide3D = function(container, params) {
 		params = params || {};
