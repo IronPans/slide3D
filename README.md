@@ -1,11 +1,20 @@
 # slide3D
 slide3D是一个轮番插件，具备触摸滑动，且具有多种切换特效
 
+最新版本：1.2.1
+
+功能更新：  
+
+- 新增分页器点击跳转功能
+- 新增自动播放功能
+- 新增用户操作后是否保留自动播放
+
+
 调用CSS和JS文件：
 
 ```
-	<link rel="stylesheet" href="slide3D.css" />
-	<script src="slide3D.js"></script>
+	<link rel="stylesheet" href="slide3D-1.2.1.min.css" />
+	<script src="slide3D-1.2.1.min.js"></script>
 ```
 
 内容代码：
@@ -49,7 +58,10 @@ var mySlide = Slide3D('.container3D', {
           rows: 6  // 行
 				},
 				pagination: true,  // 设置分页器
-				loop:true  // 是否循环，只有effect为slide时可以设置，其他效果默认循环
+				loop:true,  // 是否循环，只有effect为slide时可以设置，其他效果默认循环
+				paginationClickable: true,  //  分页器可点击跳转
+    				autoplay: 2000,   // 自动播放时间，单位秒，必须为正整数
+    				autoplayDisableOnInteraction : true     // 用户操作后是否不保留自动播放，默认为true，不保留
 			});
 ```
 
